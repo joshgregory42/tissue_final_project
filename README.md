@@ -16,7 +16,7 @@ For this project, we wanted to investigate the impact of foot-strike patterns on
 
 ### Code Description
 
-To start, the code reads in the metadata spreadsheet and extracts several key points of information. Firstly, it removes all of the duplicate rows so that there is one row per participant. It then finds all of the instances where the runner's right foot has a forefoot, midfoot, and rearfoot strike pattern at 3.5 m/s, saving the corresponding raw file path in the list.
+To start, the code (`data_read.py`) reads in the metadata spreadsheet and extracts several key points of information. Firstly, it removes all of the duplicate rows so that there is one row per participant. It then finds all of the instances where the runner's right foot has a forefoot, midfoot, and rearfoot strike pattern at 3.5 m/s, saving the corresponding raw file path in the list.
 
 The `data_read` function then reads in each of these file paths stored in the `forefoot`, `midfoot`, and `rearfoot` lists, pulling out the relevant data labels. The `format_data` function is then called, which wraps each point in the form `<pt>value,value</pt>`, which is what FEBio reads. This is done for reach of the raw data files in `forefoot`, `midfoot`, and `rearfoot`, with each foot strike pattern being saved in its own directory (i.e. `processed/midfoot`).
 
